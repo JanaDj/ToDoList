@@ -29,7 +29,7 @@ const addListItem = (toDoToAdd, completed) => {
     $('#todo-container').append(addTxt);
 };
 // GETing the data for ToDo list 
-let xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200){
         // parse response and add items 
@@ -49,7 +49,7 @@ xhr.send();
  * it adds new toDo to the list by calling the addListItem function
  */
 $('#toDoBtn').on('click', (e) => {
-    let newToDoInput = $('#newToDo');
+    const newToDoInput = $('#newToDo');
     if (newToDoInput.val() !== ""){
         addListItem(newToDoInput.val(), false);
         $(newToDoInput).val("");
@@ -94,18 +94,17 @@ $('#newToDo').on('input', e => {
  * function swaps positions of the clicked element with the previous li element
  */
 $(`#todo-container`).on('click', '.fa-arrow-up', e => {
-    let clickedLi = $(e.target).parent().parent();
-    let upperLi = clickedLi.prev();
+    const clickedLi = $(e.target).parent().parent();
+    const upperLi = clickedLi.prev();
     $(clickedLi).insertBefore(upperLi);
-    
 });
 /**
  * Onclick event for the down arrow
  * function swaps positions of the clicked element with the next li element
  */
 $(`#todo-container`).on('click', '.fa-arrow-down', e => {
-    let clickedLi = $(e.target).parent().parent();
-    let lowerLi = clickedLi.next();
+    const clickedLi = $(e.target).parent().parent();
+    const lowerLi = clickedLi.next();
     $(clickedLi).insertAfter(lowerLi);
 });
 
