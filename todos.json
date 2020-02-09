@@ -1,15 +1,15 @@
 [
 
     {
-        "todo": "Iskoristi Janu da ubijes vreme na smeni",
+        "todo": "Buy dog food",
         "completed": true
     },
     {
-        "todo": "Sabotiraj Janino ucenje",
+        "todo": "Review notes from lessons",
         "completed": true
     },
     {
-        "todo": "Zaprosi Tamaru",
+        "todo": "Wash the car",
         "completed": false
     }
 ]

@@ -6,28 +6,26 @@
  * @param {*} toDoToAdd  string, value of the toDo item that is being added 
  * @param {*} completed  bool, if item is already completed or new 
  */
-let addListItem = (toDoToAdd, completed) => {
+const addListItem = (toDoToAdd, completed) => {
     // add list item
-    let addTxt = '';
+    let addTxt = `<li class='listItems'> ${toDoToAdd}`;
     // add completed class if passed item is completed 
-    if ( completed === true){
+    if (completed){
         addTxt = `<li class='listItems completedToDo'> ${toDoToAdd}`;
-    } else {
-        addTxt = `<li class='listItems'> ${toDoToAdd}`;
-    }
+    } 
     // add span with btns
-    addTxt += `<span>`;
-    addTxt += `<button class="fa fa-arrow-up" aria-hidden="true"></button>`;
-    addTxt += `<button class="fa fa-arrow-down" aria-hidden="true"></button>`;
+    addTxt += `<span>
+    <button class="fa fa-arrow-up" aria-hidden="true"></button>
+    <button class="fa fa-arrow-down" aria-hidden="true"></button>`;
     // disable completed btn if item is completed
-    if ( completed === true){
+    if (completed){
         addTxt += `<button type="button" class="btn btn-success btn-sm disabled">Complete</button>`;
     } else {
         addTxt += `<button type="button" class="btn btn-success btn-sm">Complete</button>`;
     }
-    addTxt += `<button type="button" class="btn btn-danger btn-sm">Remove</button>`;
-    addTxt += `</span>`;
-    addTxt += `</li>`;
+    addTxt += `<button type="button" class="btn btn-danger btn-sm">Remove</button>
+                </span>
+                </li>`;
     $('#todo-container').append(addTxt);
 };
 // GETing the data for ToDo list 
@@ -36,8 +34,7 @@ xhr.onreadystatechange = () => {
     if(xhr.readyState === 4 && xhr.status === 200){
         // parse response and add items 
         console.log(xhr.responseText);
-        let parsedToDo = JSON.parse(xhr.responseText);
-        
+        let parsedToDo = JSON.parse(xhr.responseText); 
         // adding each object from parsed json
         $(parsedToDo).each(function(index){
             addListItem(parsedToDo[index].todo, parsedToDo[index].completed);
