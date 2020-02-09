@@ -1,0 +1,15 @@
+[
+
+    {
+        "todo": "Iskoristi Janu da ubijes vreme na smeni",
+        "completed": true
+    },
+    {
+        "todo": "Sabotiraj Janino ucenje",
+        "completed": true
+    },
+    {
+        "todo": "Zaprosi Tamaru",
+        "completed": false
+    }
+]

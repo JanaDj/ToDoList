@@ -1,0 +1,16 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+#container {
+    width: 50%;
+
+}
+
+.completedToDo {
+    text-decoration: line-through;
+    color: grey;
+}
+
+
